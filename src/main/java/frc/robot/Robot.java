@@ -10,9 +10,12 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import java.io.File;
 import java.io.IOException;
 
+import com.ctre.phoenix.sensors.CANCoder;
+
 import edu.wpi.first.wpilibj.Filesystem;
 import swervelib.parser.SwerveParser;
 import swervelib.SwerveDrive;
+import swervelib.encoders.CANCoderSwerve;
 import swervelib.math.SwerveMath;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
@@ -30,6 +33,11 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
   private SwerveDrive swerveDrive;
+
+  // CANCoderSwerve1 = new CANCoderSwerve(34);
+  // CANCoderSwerve2 = new CANCoderSwerve();
+  // CANCoderSwerve3 = new CANCoderSwerve();
+  // CANCoderSwerve4 = new CANCoderSwerve();
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -99,7 +107,9 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
-  
+    CANCoderSwerve(int id);
+    //CANCoderSwerve(int id); 13 33 36 23
+ 
     
   }
 
